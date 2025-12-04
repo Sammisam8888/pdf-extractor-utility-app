@@ -1,29 +1,31 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PaperPluck — Download PDFs for free</title>
+  <title>PDF Extractor — Download PDFs for free</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body class="bg-light">
   <nav class="navbar navbar-dark bg-primary mb-4">
     <div class="container">
-      <a class="navbar-brand" href="/">PaperPluck <small class="text-muted">— Download PDFs for free</small></a>
+      <a class="navbar-brand" href="/">PDF Extractor <small class="text-muted">— Download PDFs for free</small></a>
     </div>
   </nav>
 
   <main class="container">
     {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for cat, msg in messages %}
-          <div class="alert alert-{{ cat }} alert-dismissible fade show" role="alert">
-            {{ msg }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-          </div>
-        {% endfor %}
-      {% endif %}
+    {% if messages %}
+    {% for cat, msg in messages %}
+    <div class="alert alert-{{ cat }} alert-dismissible fade show" role="alert">
+      {{ msg }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
     {% endwith %}
 
     <div class="card shadow-sm mb-4">
@@ -33,13 +35,15 @@
 
         <form method="POST" class="row g-2">
           <div class="col-12">
-            <input name="page_url" class="form-control form-control-lg" placeholder="Paste SelfStudys page URL here" required>
+            <input name="page_url" class="form-control form-control-lg" placeholder="Paste SelfStudys page URL here"
+              required>
           </div>
           <div class="col-auto">
             <button class="btn btn-primary btn-lg">Extract & View PDF</button>
           </div>
           <div class="col-12">
-            <small class="text-muted">This tool fetches the page server-side, extracts the <code>sitepdfs</code> link and shows a viewer + download button.</small>
+            <small class="text-muted">This tool fetches the page server-side, extracts the <code>sitepdfs</code> link
+              and shows a viewer + download button.</small>
           </div>
         </form>
       </div>
@@ -52,4 +56,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

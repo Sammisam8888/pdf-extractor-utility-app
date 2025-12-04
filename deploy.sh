@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# deploy.sh - Setup script for PaperPluck on a server
+# deploy.sh - Setup script for PDF Extractor on a server
 
 set -e  # Exit immediately if a command exits with a non-zero status
 
-echo "🚀 Starting deployment setup for PaperPluck..."
+echo "🚀 Starting deployment setup for PDF Extractor..."
 
 # 1. Check for Python 3
 if ! command -v python3 &> /dev/null; then

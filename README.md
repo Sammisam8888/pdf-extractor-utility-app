@@ -1,4 +1,4 @@
-# PaperPluck
+# PDF Extractor
 
 A Flask application to extract and view PDFs from SelfStudys pages.
 
